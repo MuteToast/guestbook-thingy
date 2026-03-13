@@ -23,8 +23,14 @@ app.get("/write", (req, res) => {
 
 app.post("/write", (req, res) => {
 
-    const name = req.query.name;
+    const name = req.body.name;
     const message = req.body.message;
+
+    if (!name || message.length < 3) {
+        return res.render("form", { 
+            error: "I uh... Kinda need your name~... And I'm also... a litle lonely... so could you... like... write a longer message... please~?"
+        });
+    }
 
     const entry = {
         name: name,
