@@ -1,1 +1,17 @@
 <h1>↓ Write...write a message... NOW! ↓</h1>
+
+<% if (error) { %>
+    <p style="color:red;"><%= error %></p>
+<% } %>
+
+<form method="POST" action="/write">
+
+    <label>Name</label>
+    <input type="text" name="name" required>
+
+    <label>Message</label>
+    <textarea name="message"></textarea>
+
+    <button type="submit">Send</button>
+
+</form>

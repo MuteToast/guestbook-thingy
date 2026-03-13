@@ -15,6 +15,10 @@ app.get("/", (req, res) => {
     res.render("index", { title: "Startsida" });
 });
 
+app.get("/write", (req, res) => {
+    res.render("form", { error: null });
+});
+
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);	
 });
