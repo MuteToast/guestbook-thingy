@@ -1,1 +1,20 @@
 <h1>Guestbook entries</h1>
+
+<% if (entries.length === 0) { %>
+
+    <p>No entries yet.</p>
+
+<% } %>
+
+<% entries.forEach(entry => { %>
+
+    <div class="entry">
+
+        <h3><%= entry.name %></h3>
+
+        <p><%= entry.message %></p>
+
+        <small><%= entry.date %></small>
+
+    </div>
+<% }) %>
